@@ -1,0 +1,40 @@
+#main-login-container {
+    overflow: hidden;
+    background-color: #aaa3f8;
+    width: 100vw;
+    height: 100vh;
+}
+#login-container{
+    flex-direction: column;
+    border: 1px solid black;
+    width: 35vw;
+    background-color: whitesmoke;
+}
+#login-container > *{
+    margin: 3vh;
+}
+#login-container > input {
+    border-width: 0 0 1px 0;
+    border-color: black;
+    width: 20vw;
+}
+
+#login-container > button {
+    width: 20vw;
+    height: 5vh;
+    border: none;
+    color: white;
+    background-color: rgb(97, 146, 229);
+}
+
+#login-container > h5 {
+    font-weight: 100;
+}
+#login-container > label{
+    display: flex;
+    align-items: center;
+}
+#login-container > label > img{
+    width: 5vh;
+    height: 5vh;
+}

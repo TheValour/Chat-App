@@ -1,0 +1,24 @@
+.search-container {
+    border-bottom: 1px solid black;
+}
+.searchForm > input {
+    padding-left: 1vh;
+    height: 3vh;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+.searchForm > input::placeholder {
+    color: rgb(236, 230, 230);
+}
+.userChat {
+    justify-content: flex-start;
+    padding: 1vh;
+}
+.userChat > * {
+    margin-right: 2vh;
+    color: rgb(33, 33, 33);
+}
+.userChat:hover {
+    background-color: #696685 ;
+}

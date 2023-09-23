@@ -1,0 +1,18 @@
+#input-container {
+    height: 7vh;
+    justify-content: space-between;
+    background-color: rgb(228, 223, 223);
+}
+#input-container > input {
+    width: 60%;
+    height: 4vh;
+    border: none;
+    margin-left: 3vh;
+    background-color: transparent;
+}
+.send > * {
+    margin-right: 1vw;
+}
+.send > button {
+    height: 4vh;
+}

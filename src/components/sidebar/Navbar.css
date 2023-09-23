@@ -1,0 +1,33 @@
+#navbar-container {
+    color: white;
+    background-color: rgb(9, 87, 87);
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vh;
+}
+
+.right {
+    align-items: center;
+    display: flex;
+    float: right;
+}
+.right > * {
+    margin-right: 1vw;
+}
+.right > button {
+    background-color: rgb(35, 177, 177);
+    border: none;
+    border-radius: 1vh;
+    padding: 1vh;
+    color: white;
+    cursor: pointer;
+}
+img {
+    height: 2vw;
+    width: 2vw;
+    border-radius: 50%;
+    background-color: aliceblue;
+    object-fit: cover;
+}
