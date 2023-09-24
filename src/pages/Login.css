@@ -24,9 +24,11 @@
     height: 5vh;
     border: none;
     color: white;
-    background-color: rgb(97, 146, 229);
+    background-color: rgb(86, 135, 218);
 }
-
+#login-container > button:hover {
+    background-color: rgb(43, 100, 198);
+}
 #login-container > h5 {
     font-weight: 100;
 }
@@ -37,4 +39,5 @@
 #login-container > label > img{
     width: 5vh;
     height: 5vh;
+    cursor: pointer;
 }
