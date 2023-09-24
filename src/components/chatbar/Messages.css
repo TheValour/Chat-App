@@ -1,8 +1,17 @@
-#message-container {
+.sender-messages {
     display: flex;
     flex-direction: row;
     margin-bottom: 2vh;
 }
+.user-messages {
+    display: flex;
+    margin-bottom: 2vh;
+    flex-direction: row-reverse;
+}
+.user-messages > *{
+    margin-left: 2vh;
+}
+
 .messageInfo {
     display: flex;
     flex-direction: column;
@@ -17,9 +26,14 @@
     margin-bottom: 2vh;
 }
 .messageContent > p {
-    background-color: rgb(132, 146, 239);
     width: max-content;
     padding: 1vh;
     border-radius: 0 4px 4px 4px;
     margin-bottom: 2vh;
+}
+.sender-messages > .messageContent > p{
+    background-color: rgb(132, 146, 239);
+}
+.user-messages > .messageContent > p{
+    background-color: rgb(132, 216, 239);
 }

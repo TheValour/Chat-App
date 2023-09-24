@@ -1,9 +1,9 @@
 .search-container {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
 }
 .searchForm > input {
     padding-left: 1vh;
-    height: 3vh;
+    height: 4vh;
     color: white;
     background-color: transparent;
     border: none;

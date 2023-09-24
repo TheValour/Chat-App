@@ -2,6 +2,7 @@
     height: 7vh;
     justify-content: space-between;
     background-color: rgb(228, 223, 223);
+    border-radius: 0 0 2vh 0;
 }
 #input-container > input {
     width: 60%;

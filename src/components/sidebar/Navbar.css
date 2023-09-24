@@ -1,11 +1,12 @@
 #navbar-container {
     color: white;
-    background-color: rgb(9, 87, 87);
+    background-color: rgb(7 64 121);
     height: 6vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1vh;
+    border-radius: 2vh 0 0 0;
 }
 
 .right {

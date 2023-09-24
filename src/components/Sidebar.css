@@ -1,5 +1,6 @@
 #sidebar-container {
     flex: 1   ;
     height: 100%;
-    background-color: darkcyan;
+    background-color: hsl(225.93deg 69.13% 53.73%);
+    border-radius: 2vh 0 0 2vh;
 }
