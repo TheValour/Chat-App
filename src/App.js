@@ -11,7 +11,6 @@ function App() {
 
   const ProtectedRoute = ({children}) => {
     if(!currentUser) {
-      console.log("ins")
       return (
         <Navigate to="/login"/>
       )
@@ -31,7 +30,7 @@ function App() {
               </ProtectedRoute>
             }/>
             <Route path="login" element={<Login/>}/>
-            <Route path="Register" element={<Register/>}/>
+            <Route path="register" element={<Register/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
