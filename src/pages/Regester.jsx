@@ -20,35 +20,35 @@ export default function Register() {
     const email = e.target[1].value;
     const password = e.target[2].value;
     const file = e.target[3].files[0];
-    console.log(email, password);
+
     try{
       const res = await createUserWithEmailAndPassword(auth, email, password);
       console.log(res.user)
 
-      const storageRef = ref(storage, name);
-      const uploadTask = uploadBytesResumable(storageRef, file);
-      uploadTask.on('state_changed', ()=>{}, 
-        (error) => {
-          setError(true);
-        }, 
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            await updateProfile(res.user, {
-              displayName: name,
-              photoURL : downloadURL
-            });
-            await setDoc(doc(db, "user", res.user.uid), {
-              uid : res.user.uid,
-              displayName:name,
-              email,
-              photoURL : downloadURL
-            });
-            await setDoc(doc(db, "userChats", res.user.uid),{});
+      const date = new Date().getTime();
+      const storageRef = ref(storage, `${name + date}`);
 
-            navigate('/');
+      await uploadBytesResumable(storageRef, file).then(() => {
+          getDownloadURL(storageRef).then(async (downloadURL) => {
+            try{
+              await updateProfile(res.user, {
+                displayName: name,
+                photoURL : downloadURL
+              });
+              await setDoc(doc(db, "user", res.user.uid), {
+                uid : res.user.uid,
+                displayName:name,
+                email,
+                photoURL : downloadURL
+              });
+              await setDoc(doc(db, "userChats", res.user.uid),{});
+              
+              navigate('/');
+            }catch(err) {
+              setError(true);
+            }
           });
-        }
-      );
+        });
     }catch(err) {
       setError(true)
     }    
