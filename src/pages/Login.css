@@ -1,33 +1,54 @@
 #main-login-container {
     overflow: hidden;
-    background-color: #aaa3f8;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
     width: 100vw;
     height: 100vh;
 }
+
+#main-login-container > img {
+    width: 20vw;
+    height: 60vh;
+    border-radius: 0;
+    border-radius: 6px 0 0 6px;
+}
+
 #login-container{
+    background: hsla(235, 100%, 78%, 1);
+    background: linear-gradient(90deg, hsla(235, 100%, 78%, 1) 0%, hsla(222, 77%, 33%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(235, 100%, 78%, 1) 0%, hsla(222, 77%, 33%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(235, 100%, 78%, 1) 0%, hsla(222, 77%, 33%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#919BFF", endColorstr="#133A94", GradientType=1 );
+    
     flex-direction: column;
-    border: 1px solid black;
-    width: 35vw;
-    background-color: whitesmoke;
+    width: 30vw;
+    height: 60vh;
+    border-radius: 0 6px 6px 0;
 }
 #login-container > *{
-    margin: 3vh;
+    border-radius: 5px;
+    margin: 2.5vh;
 }
 #login-container > input {
     border-width: 0 0 1px 0;
+    border-radius: 5px;
     border-color: black;
     width: 20vw;
+    height: 3.5vh;
 }
-
+#login-container > #error {
+    color: #c25a5a;
+}
 #login-container > button {
     width: 20vw;
     height: 5vh;
     border: none;
+    border-radius: 5px;
     color: white;
-    background-color: rgb(86, 135, 218);
+    background-color: rgb(29 65 125)    ;
 }
 #login-container > button:hover {
-    background-color: rgb(43, 100, 198);
+    background-color: rgb(31, 78, 159);
 }
 #login-container > h5 {
     font-weight: 100;
