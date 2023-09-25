@@ -8,15 +8,19 @@ import { auth } from '../firebase';
 export default function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState();
+  const [loading, setLoading] = useState(false);
   
   const submitHandler =  async (e) =>{
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
     console.log(email, password)
+    setLoading(true);
     
     try{
       signInWithEmailAndPassword(auth, email, password);
+
+      setLoading(false);
       navigate("/");
     }catch(err) {
       setError(true);
@@ -33,6 +37,7 @@ export default function Login() {
             <button>Sign In</button>
             <h5>You don't have account?<b><Link to='/register'>Register</Link></b></h5>
             {error && <h1>Somthing went wrong</h1>}
+            {loading && <h1>📀📀 Loading 📀📀</h1>}
         </form>
     </div>
   )

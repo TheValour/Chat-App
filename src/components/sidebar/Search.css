@@ -9,7 +9,7 @@
     border: none;
 }
 .searchForm > input::placeholder {
-    color: rgb(236, 230, 230);
+    color: rgb(216, 212, 212);
 }
 .userChat {
     justify-content: flex-start;

@@ -31,7 +31,7 @@ export default function Messages({message}) {
             <span>{sendTime}</span>
         </div>
         <div className="messageContent">
-            <p>{message.text}</p>
+            {message.text && <p>{message.text}</p>}
             {message.image && <img src={message.image} alt="" />}
         </div>
     </div>

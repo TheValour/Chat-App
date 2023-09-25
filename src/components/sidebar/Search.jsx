@@ -70,9 +70,10 @@ export default function Search() {
   return (
     <div className='search-container'>
         <div className="searchForm " >
-            <input type="text" placeholder='Find User'
+            <input type="text" placeholder='Find User...'
               onKeyDown={handleKey}
               onChange={(e) => setUserName(e.target.value)}
+              value={userName}
             />
         </div>
         {error && <h4>User not found!</h4>}

@@ -22,7 +22,7 @@ export default function Input() {
     if(image) {
       const storageRef = ref(storage, uuid());
       const uploadTask = uploadBytesResumable(storageRef, image);
-      uploadTask.on(
+      uploadTask.on('state_changed', () => {},
         (error) => {
           // setError(true);
         }, 
@@ -66,12 +66,16 @@ export default function Input() {
     setText("")
     setImage(null)
   }
+  const handleKey = (e) =>{
+    e.code === 'Enter' && handleSend();
+  }
 
   return (
     <div id='input-container' className='flex'>
         <input type="text" placeholder='Type somthing...' 
           onChange={e => setText(e.target.value)} 
-        value={text}/>
+          onKeyDown={handleKey}
+          value={text}/>
         <div className="send flex">
             <img src={Img1} alt="" />
             <input type="file" style={{display: "none"}} id='file' 

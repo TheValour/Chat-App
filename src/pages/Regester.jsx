@@ -13,8 +13,10 @@ import { doc, setDoc } from "firebase/firestore";
 export default function Register() {
   const navigate = useNavigate();
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   
   const submitHandler =  async (e) =>{
+    setLoading(true);
     e.preventDefault();
     const name = e.target[0].value;
     const email = e.target[1].value;
@@ -41,8 +43,9 @@ export default function Register() {
                 email,
                 photoURL : downloadURL
               });
-              await setDoc(doc(db, "userChats", res.user.uid),{});
+              await setDoc(doc(db, "userChats", res.user.uid), {});
               
+              setLoading(false);
               navigate('/');
             }catch(err) {
               setError(true);
@@ -68,6 +71,7 @@ export default function Register() {
         <button>Sign Up</button>
         <h5>You have already an account?<b> <Link to='/login'>Login</Link></b></h5>
         {error && <h1>Somthing went wrong</h1>}
+        {loading && <h1>Loading ....</h1>}
       </form>
     </div>
   )
