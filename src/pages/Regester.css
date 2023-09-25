@@ -1,3 +1,65 @@
-#login-container > img {
+#main-register-container {
+    overflow: hidden;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+}
+
+#main-register-container > img {
+    width: 20vw;
+    height: 60vh;
+    border-radius: 0;
+    border-radius: 6px 0 0 6px;
+}
+
+#register-container{
+    background: hsla(235, 100%, 78%, 1);
+    background: linear-gradient(90deg, hsla(235, 100%, 78%, 1) 0%, hsla(222, 77%, 33%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(235, 100%, 78%, 1) 0%, hsla(222, 77%, 33%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(235, 100%, 78%, 1) 0%, hsla(222, 77%, 33%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#919BFF", endColorstr="#133A94", GradientType=1 );
+    
+    flex-direction: column;
+    width: 30vw;
+    height: 72vh;
+    border-radius: 1vh;
+}
+#register-container > *{
+    border-radius: 5px;
+    margin: 2.5vh;
+}
+#register-container > input {
+    border-width: 0 0 1px 0;
+    border-radius: 5px;
+    border-color: black;
+    width: 20vw;
+    height: 3.5vh;
+}
+#register-container > #error {
+    color: #c25a5a;
+}
+#register-container > button {
+    width: 20vw;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(29 65 125)    ;
+}
+#register-container > button:hover {
+    background-color: rgb(31, 78, 159);
+}
+#register-container > h5 {
+    font-weight: 100;
+}
+#register-container > label{
+    display: flex;
+    align-items: center;
+}
+#register-container > label > img{
+    width: 5vh;
+    height: 5vh;
     cursor: pointer;
 }
+

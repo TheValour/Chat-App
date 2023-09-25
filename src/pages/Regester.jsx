@@ -58,20 +58,20 @@ export default function Register() {
   }
   
   return (
-    <div id='main-login-container' className='flex'>
-      <form id='login-container' className='flex' action="" onSubmit={submitHandler}>
+    <div id='main-register-container' className='flex'>
+      <form id='register-container' className='flex' action="" onSubmit={submitHandler}>
         <h2>Chat All</h2>
         <h4>Register</h4>
-        <input type="text" placeholder='name'/>
-        <input type="email" placeholder='email'/>
-        <input type="password"  placeholder='password'/>
+        <input type="text" placeholder=' name'/>
+        <input type="email" placeholder=' email'/>
+        <input type="password"  placeholder=' password'/>
 
         <input type="file"  id='file' style={{display: 'none'}}/>
-        <label htmlFor="file"><img src={fileImg} alt="" /> Add Profile</label>
+        <label htmlFor="file"><img src={fileImg} alt="" />&emsp;<b>Add Profile</b></label>
         <button>Sign Up</button>
-        <h5>You have already an account?<b> <Link to='/login'>Login</Link></b></h5>
+        <h5>You have already an account? <b> <Link to='/login'>Login</Link></b></h5>
         {error && <h1>Somthing went wrong</h1>}
-        {loading && <h1>Loading ....</h1>}
+        {loading && <h3>Loading ....</h3>}
       </form>
     </div>
   )
