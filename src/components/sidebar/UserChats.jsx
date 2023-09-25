@@ -30,7 +30,7 @@ export default function UserChats() {
     dispatch({type: "CHANGE_USER", payload: u})
   }
   return (
-    <div>
+    <div id='usechats-container' >
       {chats && Object.entries(chats)?.sort((a,b) => b[1].data - a[1].date).map((chat) => (
         
         <div className="userChat flex" key={chat[0]} onClick={() => handleSelect(chat[1].userInfo)}>

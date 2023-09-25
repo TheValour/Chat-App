@@ -2,14 +2,15 @@
     border-bottom: 1px solid white;
 }
 .searchForm > input {
-    padding-left: 1vh;
+    margin: 4vh 0 2vh 0;
     height: 4vh;
-    color: white;
-    background-color: transparent;
+    width: 90%;
+    border-radius: 2vh;
+    background-color: gainsboro;
     border: none;
 }
 .searchForm > input::placeholder {
-    color: rgb(216, 212, 212);
+    color: rgb(133, 125, 125);
 }
 .userChat {
     justify-content: flex-start;
@@ -20,5 +21,9 @@
     color: rgb(33, 33, 33);
 }
 .userChat:hover {
-    background-color: #696685 ;
+    background-color: #6b5fd6 ;
+}
+.userChat > img {
+    height: 2vw;
+    width: 2vw;
 }

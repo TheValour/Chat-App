@@ -69,8 +69,8 @@ export default function Search() {
 
   return (
     <div className='search-container'>
-        <div className="searchForm " >
-            <input type="text" placeholder='Find User...'
+        <div className="searchForm flex " >
+            <input type="text" placeholder=' 🔍 Find User...'
               onKeyDown={handleKey}
               onChange={(e) => setUserName(e.target.value)}
               value={userName}

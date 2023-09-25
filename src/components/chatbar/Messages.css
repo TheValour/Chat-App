@@ -11,7 +11,9 @@
 .user-messages > *{
     margin-left: 2vh;
 }
-
+.message-block {
+    margin: 4vh;
+}
 .messageInfo {
     display: flex;
     flex-direction: column;
@@ -27,13 +29,13 @@
 }
 .messageContent > p {
     width: max-content;
-    padding: 1vh;
-    border-radius: 0 4px 4px 4px;
-    margin-bottom: 2vh;
+    padding: 1.2vh;
 }
 .sender-messages > .messageContent > p{
-    background-color: rgb(132, 146, 239);
+    border-radius: 0 5px 5px 1vh;
+    background-color: rgb(156, 169, 254);
 }
 .user-messages > .messageContent > p{
-    background-color: rgb(132, 216, 239);
+    border-radius: 5px 0 2vh 5px;
+    background-color: rgb(219, 243, 227);
 }

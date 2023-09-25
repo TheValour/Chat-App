@@ -1,7 +1,7 @@
 #input-container {
     height: 7vh;
     justify-content: space-between;
-    background-color: rgb(228, 223, 223);
+    background-color: white;
     border-radius: 0 0 2vh 0;
 }
 #input-container > input {
@@ -16,4 +16,8 @@
 }
 .send > button {
     height: 4vh;
+    width: 5vw;
+    background-color: rgb(156, 169, 254);
+    border: 0;
+    border-radius: 1vh;
 }

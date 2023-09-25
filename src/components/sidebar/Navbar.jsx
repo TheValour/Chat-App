@@ -9,13 +9,11 @@ export default function Navbar() {
   const {currentUser} = useContext(AuthContext);
   
   return (
-    <div id='navbar-container' >
-        <span className="logo"><b>Hello Chat</b></span>
-        <span className='right'>
-            <img src={currentUser.photoURL} alt="img" />
-            <span>{currentUser.displayName}</span>
-            <button onClick={() => signOut(auth)}>LogOut</button>
-        </span>
+    <div id='navbar-container' className='flex'>
+        <span className="logo"><h2>Hello Chat</h2></span>
+        <img src={currentUser.photoURL} alt="img" />
+        <h3>{currentUser.displayName}</h3>
+        <button onClick={() => signOut(auth)}>LogOut</button>
     </div>
   )
 }
