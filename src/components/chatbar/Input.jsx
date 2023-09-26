@@ -67,6 +67,7 @@ export default function Input() {
     setImage(null)
   }
   const handleKey = (e) =>{
+    if(text === '') return;
     e.code === 'Enter' && handleSend();
   }
 

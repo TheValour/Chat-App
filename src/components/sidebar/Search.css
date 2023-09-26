@@ -13,6 +13,9 @@
     color: rgb(133, 125, 125);
 }
 .userChat {
+    background-color: rgb(16, 86, 155);
+    margin: 2vh;
+    border-radius: 2vh;
     justify-content: flex-start;
     padding: 1vh;
 }
@@ -21,7 +24,7 @@
     color: rgb(33, 33, 33);
 }
 .userChat:hover {
-    background-color: #6b5fd6 ;
+    background-color: #4552bf ;
 }
 .userChat > img {
     height: 2vw;
