@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react'
 import './Input.css'
 import Img1 from '../../img/attach.png'
-import Img2 from '../../img/img.png'
 import Img3 from '../../img/emojiIcon.jpg'
 import Img4 from '../../img/send.png'
 
@@ -91,7 +90,7 @@ export default function Input() {
       {flag && <Picker onEmojiClick={onEmojiClick} width='47vw' height='30vh'  
         searchDisabled='true' 
         previewConfig={{
-          showPreview: false, // Note: You should use boolean values without quotes
+          showPreview: false, // Note: 
         }}
       />}
 
@@ -110,7 +109,6 @@ export default function Input() {
 
               <img src={Img3} alt="img" onClick={changeFlag} className='emojiIcon'/>
               <img src={Img4} alt="img" onClick={handleSend} className='sendIcon'/>
-              {/* <button onClick={handleSend}>Send</button> */}
           </div>
       </div>
 

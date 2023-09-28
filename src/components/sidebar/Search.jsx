@@ -10,7 +10,7 @@ export default function Search() {
 
   const [userName, setUserName] = useState("");
   const [user, setUser] = useState();
-  const [error, setError] = useState(false);
+  const [flag, setFlag] = useState(false);
   
   const handleSearch = async () =>{
     const userRef = collection(db, "user");
@@ -21,9 +21,9 @@ export default function Search() {
       querySnapshot.forEach((doc) => {
         setUser(doc.data())
       });
+      if(!user) { setFlag(true); }
 
     }catch(err) {
-        setError(true);
     }
   }
   const handleKey = (e) =>{
@@ -58,10 +58,8 @@ export default function Search() {
           },
           [combinedId+".date"] : serverTimestamp()
         })
-        
       }
     }catch(err) {
-
     }
     setUser(null);
     setUserName("")
@@ -76,13 +74,13 @@ export default function Search() {
               value={userName}
             />
         </div>
-        {error && <h4>User not found!</h4>}
        {user && <div className="userChat flex" onClick={handleUser}>
             <img src={user.photoURL} alt="" />
             <div className="userCharInfo">
                 <span>{user.displayName}</span>
             </div>
         </div>}
+        {!user && flag && <h4 onClick={() => setFlag(false)}>User not found!</h4>}
     </div>
   )
 }

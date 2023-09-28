@@ -1,3 +1,6 @@
+.message-block {
+    margin: 4vh;
+}
 .sender-messages {
     display: flex;
     flex-direction: row;
@@ -10,9 +13,6 @@
 }
 .user-messages > *{
     margin-left: 2vh;
-}
-.message-block {
-    margin: 4vh;
 }
 .messageInfo {
     display: flex;
