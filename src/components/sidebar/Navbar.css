@@ -5,6 +5,7 @@
     height: 90vh;
     width: 15vw;
     flex-direction: column;
+    margin-right: 1px;
     border-radius: 2vh 0 0 2vh;
 }
 #navbar-container > * {
