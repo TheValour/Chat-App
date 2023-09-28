@@ -1,4 +1,6 @@
 #chat-container {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     flex: 2;
     background-color: whitesmoke;

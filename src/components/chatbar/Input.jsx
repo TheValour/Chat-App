@@ -2,7 +2,10 @@ import React, { useState, useContext } from 'react'
 import './Input.css'
 import Img1 from '../../img/attach.png'
 import Img2 from '../../img/img.png'
+import Img3 from '../../img/emojiIcon.jpg'
+import Img4 from '../../img/send.png'
 
+import Picker from 'emoji-picker-react';
 import { AuthContext } from '../../context/AuthContext'
 import { ChatContext } from '../../context/ChatContext';
 
@@ -15,10 +18,22 @@ export default function Input() {
   const [text, setText] = useState("");
   const [image, setImage] = useState(null);
 
+  // for emoji ------
+  const [flag, setFlag] = useState(false);
+  const onEmojiClick = (emojiObject) => {
+    setText((prevText) => prevText + emojiObject.emoji)
+  };
+  const changeFlag = () =>{
+    setFlag(pre => !pre);
+  }
+  // emoji -----------
+
   const {currentUser} = useContext(AuthContext);
   const {data} = useContext(ChatContext)
 
   const handleSend = async () => {
+    setFlag(false);
+    if(text === '') return;
     if(image) {
       const storageRef = ref(storage, uuid());
       const uploadTask = uploadBytesResumable(storageRef, image);
@@ -67,27 +82,38 @@ export default function Input() {
     setImage(null)
   }
   const handleKey = (e) =>{
-    if(text === '') return;
+    console.log(text)
     e.code === 'Enter' && handleSend();
   }
 
   return (
-    <div id='input-container' className='flex'>
-        <input type="text" placeholder='Type somthing...' 
-          onChange={e => setText(e.target.value)} 
-          onKeyDown={handleKey}
-          value={text}/>
-        <div className="send flex">
-            <img src={Img1} alt="" />
-            <input type="file" style={{display: "none"}} id='file' 
-              onChange={e => setImage(e.target.files[0])} 
-              />
+    <div id='main-input-container'>
+      {flag && <Picker onEmojiClick={onEmojiClick} width='47vw' height='30vh'  
+        searchDisabled='true' 
+        previewConfig={{
+          showPreview: false, // Note: You should use boolean values without quotes
+        }}
+      />}
 
-            <label htmlFor='file'>
-                <img src={Img2} alt="" />
-            </label>
-            <button onClick={handleSend}>Send</button>
-        </div>
+      <div id='input-container' className='flex'>
+          <input type="text" placeholder='Type somthing...' 
+            onChange={e => setText(e.target.value)} 
+            onKeyDown={handleKey}
+            value={text}/>
+          <div className="send flex">
+              <input type="file" style={{display: "none"}} id='file' 
+                onChange={e => setImage(e.target.files[0])} 
+                />
+              <label htmlFor='file'>
+                  <img src={Img1} alt="" className='fileIcon'/>
+              </label> 
+
+              <img src={Img3} alt="img" onClick={changeFlag} className='emojiIcon'/>
+              <img src={Img4} alt="img" onClick={handleSend} className='sendIcon'/>
+              {/* <button onClick={handleSend}>Send</button> */}
+          </div>
+      </div>
+
     </div>
   )
 }
