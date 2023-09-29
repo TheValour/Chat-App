@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react'
 import './Search.css'
 import { AuthContext } from '../../context/AuthContext';
+import { ChatContext } from '../../context/ChatContext';
 
 import { db } from '../../firebase';
 import { collection, getDocs, query, serverTimestamp, setDoc, updateDoc, where, doc, getDoc } from "firebase/firestore";
 
 export default function Search() {
   const {currentUser} = useContext(AuthContext);
+  const {dispatch} = useContext(ChatContext);
 
   const [userName, setUserName] = useState("");
   const [user, setUser] = useState();
@@ -29,7 +31,9 @@ export default function Search() {
   const handleKey = (e) =>{
     e.code === 'Enter' && handleSearch();
   }
-
+  const handleSelect = (u) =>{
+    dispatch({type: "CHANGE_USER", payload: u})
+  }
   const handleUser = async () => {
     const combinedId = currentUser.uid > user.uid 
       ? currentUser.uid + user.uid : user.uid + currentUser.uid;
@@ -59,9 +63,11 @@ export default function Search() {
           [combinedId+".date"] : serverTimestamp(),
         })
       }
+      handleSelect(user)
     }catch(err) {
     }
     setUser(null);
+    setFlag(false)
     setUserName("")
   }
 
