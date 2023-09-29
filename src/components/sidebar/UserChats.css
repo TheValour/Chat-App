@@ -3,5 +3,10 @@
 }
 .userChat {
     padding: 2vh;
-    border-bottom: 1.5px solid hsl(226, 71%, 63%);
+}
+.isOnline {
+    border-bottom: 3px solid green;
+}
+.isOffline {
+    border-bottom: 3px solid grey;
 }

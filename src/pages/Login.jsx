@@ -4,7 +4,8 @@ import './Login.css'
 import SideImg from '../img/sideImg.jpg'
 
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../firebase';
+import { auth, db } from '../firebase';
+import { doc, updateDoc } from 'firebase/firestore';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -18,13 +19,20 @@ export default function Login() {
     console.log(email, password)
     setError(false);
     setLoading(true);
-    signInWithEmailAndPassword(auth, email, password)
-        .then(() => {navigate("/"); setLoading(false)})
-        .catch((e) => {
-            setLoading(false)
-            setError(true);
-        });  
-  }
+    try{
+      const res = await signInWithEmailAndPassword(auth, email, password);
+      const docRef = doc(db, 'user', res.user.uid);
+      const updateMode = await updateDoc(docRef, {
+        isLogIn : true
+      });
+      navigate("/"); 
+      setLoading(false)       
+    }catch(err) {
+      setLoading(false)
+      setError(true);
+      console.log(err)
+    }
+  };
 
   return (
     <div id='main-login-container' className='flex'>

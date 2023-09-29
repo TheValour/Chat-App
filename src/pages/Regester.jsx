@@ -49,6 +49,7 @@ export default function Register() {
               await setDoc(doc(db, "user", res.user.uid), {
                 uid : res.user.uid,
                 displayName:name,
+                isLogin : true,
                 email,
                 photoURL : downloadURL
               });
