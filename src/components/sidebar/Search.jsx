@@ -47,7 +47,7 @@ export default function Search() {
             displayName: user.displayName,
             photoURL: user.photoURL
           },
-          [combinedId+".date"] : serverTimestamp()
+          [combinedId+".date"] : serverTimestamp(),
         })
         
         await updateDoc(doc(db, "userChats", user.uid), {
@@ -56,7 +56,7 @@ export default function Search() {
             displayName: currentUser.displayName,
             photoURL: currentUser.photoURL
           },
-          [combinedId+".date"] : serverTimestamp()
+          [combinedId+".date"] : serverTimestamp(),
         })
       }
     }catch(err) {
