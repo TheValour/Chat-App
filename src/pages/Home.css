@@ -5,3 +5,12 @@
     align-items: center;
     justify-content: center;
 }
+.two {
+    width: 80vw;
+    height: 90vh;
+}
+@media (max-width: 850px) {
+    #home-container{
+        flex-direction: column;
+    }
+}

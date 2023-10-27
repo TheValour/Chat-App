@@ -8,8 +8,10 @@ export default function Home() {
   return (
     <div id='home-container'>
         <Navbar/>
-        <Sidebar/>
-        <Chat/>
+        <div className='two flex'>
+          <Sidebar/>
+          <Chat/>
+        </div>
     </div>
   )
 }
