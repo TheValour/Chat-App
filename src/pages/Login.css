@@ -62,3 +62,20 @@
     height: 5vh;
     cursor: pointer;
 }
+
+@media (max-width: 950px) {
+    #main-login-container > img {
+        display: none;
+    }
+
+    #login-container {
+        box-sizing: border-box;
+        width: 60vw;
+        padding: 1% 6% 1% 6%;
+        border-radius: 12px;
+    }
+
+    #login-container > input {
+        width: 100%;
+    }
+}
