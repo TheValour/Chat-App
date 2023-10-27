@@ -22,7 +22,7 @@ export default function Login() {
     try{
       const res = await signInWithEmailAndPassword(auth, email, password);
       const docRef = doc(db, 'user', res.user.uid);
-      const updateMode = await updateDoc(docRef, {
+      await updateDoc(docRef, {
         isLogIn : true
       });
       navigate("/"); 
